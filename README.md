@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔐 SC-500 Lab 08 — AI Identity & Access Security
+# 🔐 SC-500 Lab 08 - AI Identity & Access Security
 
 ### Microsoft Entra ID + Azure RBAC + Managed Identity + Microsoft Foundry + Keyless AI + KQL
 
@@ -21,10 +21,7 @@
 
 ---
 
-# 🖼️ SC-500 Lab 08 — Banner
-
-> **📌 BANNER PLACEMENT — put the final banner image here:**  
-> `docs/images/sc-500-lab-08-banner.png`
+# 🖼️ SC-500 Lab 08  Banner
 
 ![SC-500 Lab 08 — AI Identity & Access Security Banner](docs/images/sc-500-lab-08-banner.png)
 
@@ -102,9 +99,6 @@ The lab was deliberately performed primarily through **Azure PowerShell, REST AP
 ---
 
 # 🏗️ Architecture
-
-> **📌 Screenshot/Image placement:** Put the generated architecture diagram at  
-> `docs/images/sc-500-lab-08-architecture.png`
 
 ![SC-500 Lab 08 — Security Architecture](docs/images/sc-500-lab-08-architecture.png)
 
@@ -246,13 +240,11 @@ scp
 
 ### 📸 Evidence Screenshot
 
-> **📌 Put E20 here:**  
-> `docs/evidence/E20-entra-token-audience-validation.png`
+> **📌 Entra Token Audience:**  
 
 ![Evidence 20 — Entra Token Audience](docs/evidence/20-entra-token-audience-validation.png)
 
-> **📌 Put E21 here:**  
-> `docs/evidence/E21-token-caller-identity-validation.png`
+> **📌 Token Caller Identity:**  
 
 ![Evidence 21 — Token Caller Identity](docs/evidence/21-token-caller-identity-validation.png)
 
@@ -285,13 +277,15 @@ A valid token does not automatically mean the caller should have access.
 
 ### 📸 Evidence Screenshots
 
-> **📌 Put E22 here:** `docs/evidence/E22-project-managed-identity-validation.png`  
-> **📌 Put E23 here:** `docs/evidence/E23-project-mi-rbac-validation.png`  
-> **📌 Put E24 here:** `docs/evidence/E24-project-mi-rbac-scope-validation.png`
+> **📌 Project Managed Identity** 
 
 ![Evidence 22 — Project Managed Identity](docs/evidence/22-project-managed-identity-validation.png)
+ 
+> **📌 Project MI RBAC:**  
 
 ![Evidence 23 — Project MI RBAC](docs/evidence/23-project-mi-rbac-validation.png)
+
+> **📌 RBAC Scope:** 
 
 ![Evidence 24 — RBAC Scope](docs/evidence/24-project-mi-rbac-scope-validation.png)
 
@@ -346,10 +340,11 @@ Ocp-Apim-Subscription-Key
 
 ### 📸 Evidence Screenshots
 
-> **📌 Put E19 here:** `docs/evidence/E19-key-based-authentication-failure.png`  
-> **📌 Put E29 here:** `docs/evidence/E29-keyless-authentication-header-validation.png`
+> **📌 Key Authentication Rejected:** 
 
-![Evidence 19 — Key Authentication Rejected](docs/evidence/19-key-based-authentication-failure.png)
+![Evidence 19 — Key Authentication Rejected](docs/evidence/19-key-based-authentication-blocked-401.png)
+
+> **📌 Keyless Header Validation:** 
 
 ![Evidence 29 — Keyless Header Validation](docs/evidence/29-keyless-authentication-header-validation.png)
 
@@ -377,16 +372,19 @@ FINAL_AI_VERIFICATION_OK
 
 ### 📸 Evidence Screenshots
 
-> **📌 Put E25 here:** `docs/evidence/E25-ai-project-endpoint-validation.png`  
-> **📌 Put E26 here:** `docs/evidence/E26-deployment-validation.png`  
-> **📌 Put E28 here:** `docs/evidence/E28-entra-authenticated-ai-inference.png`  
-> **📌 Put E72 here:** `docs/evidence/E72-final-ai-response-verification.png`
+> **📌 AI Project Endpoint:**   
 
 ![Evidence 25 — AI Project Endpoint](docs/evidence/25-ai-project-endpoint-validation.png)
 
+> **📌 Model Deployment:**  
+
 ![Evidence 26 — Model Deployment](docs/evidence/26-deployment-validation.png)
 
+> **📌Authenticated AI Inference:** 
+
 ![Evidence 28 — Authenticated AI Inference](docs/evidence/28-entra-authenticated-ai-inference.png)
+  
+> **📌 Final AI Verification:** 
 
 ![Evidence 72 — Final AI Verification](docs/evidence/72-final-ai-response-verification.png)
 
@@ -394,8 +392,7 @@ FINAL_AI_VERIFICATION_OK
 
 # 📊 6. Telemetry & Logging
 
-> **📌 Screenshot/Image placement:** Put the generated lab visual here if you want a second visual break:
-> `docs/images/sc-500-lab-08-visual.png`
+> **📌 Telemetry & Security Workflow:** 
 
 ![Telemetry & Security Workflow](docs/images/sc-500-lab-08-visual.png)
 
@@ -419,15 +416,28 @@ AzureDiagnostics
 
 ### 📸 Evidence Screenshots
 
-> **📌 Put E62 here:** `docs/evidence/62-diagnostic-settings-validation.png`  
-> **📌 Put E63 here:** `docs/evidence/63-trace-telemetry-validation.png`  
-> **📌 Put E64 here:** `docs/evidence/64-ai-usage-event-validation.png`  
-> **📌 Put E65 here:** `docs/evidence/65-ai-usage-event-detail.png`  
-> **📌 Put E66 here:** `docs/evidence/66-ai-token-latency-telemetry.png`
+> **📌 Diagnostic Settings:**
 
-![Evidence 62 — Diagnostic Settings](docs/evidence/62-diagnostic-settings-validation.png)
+![Evidence 62 — Diagnostic Settings](docs/evidence/62-foundry-diagnostic-categories-enabled.png)
+ 
+> **📌 Trace TelemetryPut:**   
 
-![Evidence 63 — Trace Telemetry](docs/evidence/63-trace-telemetry-validation.png)
+![Evidence 63 — Trace Telemetry](docs/evidence/63-trace-telemetry-no-events-1h.png)
+
+> **📌 AI Usage Event Validation:** 
+
+![Evidence 64 — AI Usage Event Validation](docs/evidence/64-ai-usage-telemetry-confirmed.png)
+ 
+> **📌 AI Usage Event Detail:** 
+
+![Evidence 65 — AI Usage Event Detail](docs/evidence/65-ai-usage-token-performance-telemetry.png)
+ 
+> **📌 AI Token & Latency Telemetry:** 
+
+![Evidence 66 — AI Token & Latency Telemetry](docs/evidence/66-ai-usage-token-metrics-parsed.png)
+
+
+
 
 ---
 
@@ -481,7 +491,7 @@ Authentication Failure
 
 ### 📸 Evidence Screenshot
 
-> **📌 Put E69 here:** `docs/evidence/E69-controlled-http-401.png`
+> **📌 Controlled HTTP 401:** 
 
 ![Evidence 69 — Controlled HTTP 401](docs/evidence/69-controlled-http-401.png)
 
@@ -516,7 +526,7 @@ Other response classifications:
 
 ### 📸 Response Logic
 
-> **📌 Put E71 here:** `docs/evidence/E71-security-response-decision-logic.png`
+> **📌 Response Decision Logic:** 
 
 ![Evidence 71 — Response Decision Logic](docs/evidence/71-security-response-decision-logic.png)
 
@@ -568,7 +578,7 @@ Do not invent telemetry
 
 ### 📸 Evidence Screenshot
 
-> **📌 Put E70 here:** `docs/evidence/E70-telemetry-correlation-gap.png`
+> **📌 Telemetry Correlation Gap:** 
 
 ![Evidence 70 — Telemetry Correlation Gap](docs/evidence/70-telemetry-correlation-gap.png)
 
@@ -643,7 +653,7 @@ Telemetry
 
 ### 📸 Evidence Screenshot
 
-> **📌 Put E78 here:** `docs/evidence/E78-incident-response-workflow.png`
+> **📌 Incident Response Workflow:** 
 
 ![Evidence 78 — Incident Response Workflow](docs/evidence/78-incident-response-workflow.png)
 
