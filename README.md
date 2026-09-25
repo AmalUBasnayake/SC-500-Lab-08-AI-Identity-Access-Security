@@ -70,29 +70,7 @@ The objective of this lab was **not simply to make an AI model respond**.
 
 The objective was to prove the complete security lifecycle of an AI workload:
 
-```text
-IDENTITY
-   ↓
-AUTHENTICATION
-   ↓
-AUTHORIZATION
-   ↓
-LEAST PRIVILEGE
-   ↓
-KEYLESS ACCESS
-   ↓
-AI WORKLOAD
-   ↓
-TELEMETRY
-   ↓
-DETECTION
-   ↓
-INVESTIGATION
-   ↓
-RESPONSE
-   ↓
-VERIFICATION
-```
+![SC-500 Lab 08 — Lab Objective](docs/images/lab_objective.png)
 
 The lab was deliberately performed primarily through **Azure PowerShell, REST API calls, and KQL** to build repeatable cloud-security engineering and SOC investigation skills instead of relying only on portal-based configuration.
 
@@ -107,67 +85,8 @@ The lab was deliberately performed primarily through **Azure PowerShell, REST AP
 
 ### Architecture Flow
 
-```text
-┌──────────────────────┐
-│ Client / Engineer    │
-│ PowerShell / REST    │
-└──────────┬───────────┘
-           │
-           │ Entra Bearer Token
-           ▼
-┌──────────────────────┐
-│ Microsoft Entra ID   │
-│ Authentication       │
-└──────────┬───────────┘
-           │
-           │ Identity Validated
-           ▼
-┌──────────────────────┐
-│ Azure RBAC           │
-│ Foundry User         │
-│ Least Privilege      │
-└──────────┬───────────┘
-           │
-           │ Authorized Request
-           ▼
-┌──────────────────────┐
-│ Microsoft Foundry    │
-│ AI Project           │
-└──────────┬───────────┘
-           │
-           │ Keyless AI Inference
-           ▼
-┌──────────────────────┐
-│ gpt-5.6-luna         │
-│ Model Deployment     │
-└──────────┬───────────┘
-           │
-           │ Diagnostic Activity
-           ▼
-┌──────────────────────┐
-│ Azure Diagnostics    │
-│ RequestResponse      │
-│ Audit / Trace        │
-│ AI Usage             │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│ Log Analytics + KQL  │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│ Detection             │
-│ Investigation         │
-│ Response              │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│ Final Verification   │
-└──────────────────────┘
-```
+![SC-500 Lab 08 — Architecture Flow](docs/images/Architecture_flow.png)
+
 
 ---
 
@@ -297,15 +216,7 @@ The Foundry Project used a **System Assigned Managed Identity**.
 
 The identity and principal ID were validated and correlated with RBAC:
 
-```text
-Foundry Project
-      ↓
-Managed Identity
-      ↓
-RBAC Assignment
-      ↓
-Foundry User
-```
+![SC-500 Lab 08 — The Foundry Project used a System Assigned Managed Identity](docs/images/Managed_identity.png)
 
 This demonstrates workload identity without embedding credentials in the application flow.
 
@@ -317,13 +228,8 @@ Local/key-based authentication was disabled.
 
 The intended security model was:
 
-```text
-API Key
-   ✕
-   ↓
-Entra Bearer Token
-   ✓
-```
+![SC-500 Lab 08 — API Key](docs/images/api.png)
+
 
 The successful request used:
 
@@ -467,15 +373,8 @@ This enabled workload-level investigation beyond simple HTTP status codes.
 
 A controlled invalid-token request was deliberately generated against the AI API.
 
-```text
-Invalid Token
-      ↓
-HTTP 401
-      ↓
-Authentication Failure
-      ↓
-Investigation
-```
+![SC-500 Lab 08 — Controlled Security Test - HTTP 401](docs/images/401.png)
+
 
 Observed:
 
@@ -499,21 +398,8 @@ Authentication Failure
 
 # 🕵️ 9. Investigation Logic
 
-```text
-HTTP 401
-   ↓
-Validate Token
-   ↓
-Validate Token Audience
-   ↓
-Validate Caller Identity
-   ↓
-Validate RBAC
-   ↓
-Validate Authentication Method
-   ↓
-Review RequestResponse Telemetry
-```
+![SC-500 Lab 08 — Investigation Logic](docs/images/Investigation_logic.png)
+
 
 Other response classifications:
 
@@ -560,21 +446,8 @@ It was documented as:
 
 ### Engineering Response
 
-```text
-Observed API evidence
-        ↓
-Preserve evidence
-        ↓
-Investigate diagnostic routing
-        ↓
-Check ingestion delay
-        ↓
-Check category behavior
-        ↓
-Check correlation timing
-        ↓
-Do not invent telemetry
-```
+![SC-500 Lab 08 — Engineering Response](docs/images/Engineering_response.png)
+
 
 ### 📸 Evidence Screenshot
 
@@ -875,23 +748,7 @@ That limitation was documented as an engineering finding rather than incorrectly
 
 # 🔒 19. Final Security Principle
 
-```text
-IDENTITY
-   ↓
-LEAST PRIVILEGE
-   ↓
-KEYLESS AUTHENTICATION
-   ↓
-AI WORKLOAD PROTECTION
-   ↓
-TELEMETRY
-   ↓
-DETECTION
-   ↓
-INCIDENT RESPONSE
-   ↓
-VERIFICATION
-```
+![SC-500 Lab 08 — Final Security Principle](docs/images/Final_security_principle.png)
 
 ---
 
