@@ -228,7 +228,7 @@ Local/key-based authentication was disabled.
 
 The intended security model was:
 
-![SC-500 Lab 08 — API Key](docs/images/api.png)
+![SC-500 Lab 08 — Keyless Authentication](docs/images/api.png)
 
 
 The successful request used:
