@@ -1013,7 +1013,7 @@ docs/evidence/E##-descriptive-name.png
 
 ## Evidence 59 — Telemetry
 
-![Evidence 59 — Telemetry](docs/evidence59-response-verification-telemetry.png)
+![Evidence 59 — Telemetry](docs/evidence/59-response-verification-telemetry.png)
 
 **Figure E59 — RequestResponse telemetry validation establishing observable AI request activity in the monitoring workflow.**
 
